@@ -21,7 +21,25 @@
     </item>
     
     <item>
-      <title>Distributional Policy Optimization: An Alternative Approach for Continuous Control - NeurIPS 2019</title>
+      <title>Maximizing the Total Reward via Reward Tweaking</title>
+      <link>https://tesslerc.github.io/portfolio/reward_tweaking/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tesslerc.github.io/portfolio/reward_tweaking/</guid>
+      <description>In many practical applications, we train the agent on the ɣ-discounted task and evaluate it on the total reward. The discrepancy between training and evaluation may lead to sub-optimal solutions. Reward tweaking learns an alternative surrogate reward, aimed to guide the agent towards better behavior on the evaluation metric.</description>
+    </item>
+    
+    <item>
+      <title>Inverse Reinforcement Learning in Contextual MDPs</title>
+      <link>https://tesslerc.github.io/portfolio/coirl/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tesslerc.github.io/portfolio/coirl/</guid>
+      <description>We analyze the problem of performing inverse reinforcement learning in contextual MDPs.</description>
+    </item>
+    
+    <item>
+      <title>Distributional Policy Optimization: An Alternative Approach for Continuous Control</title>
       <link>https://tesslerc.github.io/portfolio/dpo/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
@@ -30,7 +48,7 @@
     </item>
     
     <item>
-      <title>Action Robust Reinforcement Learning and Applications in Continuous Control - ICML 2019</title>
+      <title>Action Robust Reinforcement Learning and Applications in Continuous Control</title>
       <link>https://tesslerc.github.io/portfolio/action_robust/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       
@@ -39,7 +57,7 @@
     </item>
     
     <item>
-      <title>Reward Constrained Policy Optimization - ICLR 2019</title>
+      <title>Reward Constrained Policy Optimization</title>
       <link>https://tesslerc.github.io/portfolio/rcpo/</link>
       <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
       
@@ -58,7 +76,7 @@ Reinforcement Learning (RL) is a learning paradigm that highly resembles how we,
     </item>
     
     <item>
-      <title>A Deep Hierarchical Approach to Lifelong Learning in Minecraft - AAAI 2017</title>
+      <title>A Deep Hierarchical Approach to Lifelong Learning in Minecraft</title>
       <link>https://tesslerc.github.io/portfolio/hdrln/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

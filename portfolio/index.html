@@ -25,7 +25,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tesslerc.github.io/portfolio/" />
-<meta property="og:updated_time" content="2019-11-27T00:00:00+00:00" /><meta property="og:site_name" content="Chen Tessler" />
+<meta property="og:updated_time" content="2020-02-01T00:00:00+00:00" /><meta property="og:site_name" content="Chen Tessler" />
 
 
     
@@ -94,6 +94,14 @@
 		 
 			 
 				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
 					<a href="/posts/">
 						<span>Posts</span>
 					</a>
@@ -104,14 +112,6 @@
 				<li>
 					<a href="/portfolio/">
 						<span>Publications</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/about/">
-						<span>About</span>
 					</a>
 				</li>
 			 
@@ -171,14 +171,76 @@
             <hr class="divider">
             
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12" href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control"
+                <div class="col-md-4 col-sm-4 col-xs-12" href="https://arxiv.org/abs/2002.03327"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="dpo.png" alt="Distributional Policy Optimization: An Alternative Approach for Continuous Control - NeurIPS 2019">
+                    <img class="project__image img-responsive" src="reward_tweaking.png" alt="Maximizing the Total Reward via Reward Tweaking">
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
-                        <a href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control" target="_blank" rel="noopener noreferrer">Distributional Policy Optimization: An Alternative Approach for Continuous Control - NeurIPS 2019</a>
+                        <a href="https://arxiv.org/abs/2002.03327" target="_blank" rel="noopener noreferrer">Maximizing the Total Reward via Reward Tweaking</a>
                     </span>
+                    </br>
+                    
+                        <span class="project__summary">
+                            <b>Preprint</b>
+                        </span>
+                    
+                    <span class="project__subtitle-small">
+                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                        By learning an alternative surrogate reward we can guide the agent towards better behavior
+                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                    </span>
+                    <span class="project__summary">
+                        <p>In many practical applications, we train the agent on the ɣ-discounted task and evaluate it on the total reward. The discrepancy between training and evaluation may lead to sub-optimal solutions. Reward tweaking learns an alternative surrogate reward, aimed to guide the agent towards better behavior on the evaluation metric.</p>
+
+                    </span>
+                </div>
+            </div>
+            <div class="row-space">&nbsp;</div>
+            
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12" href="https://arxiv.org/pdf/1905.09710"
+                    target="_blank" rel="noopener noreferrer">
+                    <img class="project__image img-responsive" src="coirl.png" alt="Inverse Reinforcement Learning in Contextual MDPs">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <span class="project__title">
+                        <a href="https://arxiv.org/pdf/1905.09710" target="_blank" rel="noopener noreferrer">Inverse Reinforcement Learning in Contextual MDPs</a>
+                    </span>
+                    </br>
+                    
+                        <span class="project__summary">
+                            <b>Preprint</b>
+                        </span>
+                    
+                    <span class="project__subtitle-small">
+                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                        In the medical domain, the goal is to provide personalized medicine (contextual MDPs) to each patient, yet the rewards are hard to define (inverse RL)
+                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                    </span>
+                    <span class="project__summary">
+                        <p>We analyze the problem of performing inverse reinforcement learning in contextual MDPs.</p>
+
+                    </span>
+                </div>
+            </div>
+            <div class="row-space">&nbsp;</div>
+            
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12" href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control"
+                    target="_blank" rel="noopener noreferrer">
+                    <img class="project__image img-responsive" src="dpo.png" alt="Distributional Policy Optimization: An Alternative Approach for Continuous Control">
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <span class="project__title">
+                        <a href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control" target="_blank" rel="noopener noreferrer">Distributional Policy Optimization: An Alternative Approach for Continuous Control</a>
+                    </span>
+                    </br>
+                    
+                        <span class="project__summary">
+                            <b>Published: </b>NeurIPS 2019
+                        </span>
+                    
                     <span class="project__subtitle-small">
                         <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
                         A generative model for the policy enables the agent to overcome local optima
@@ -195,12 +257,18 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="http://proceedings.mlr.press/v97/tessler19a.html"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="action_robust.jpeg" alt="Action Robust Reinforcement Learning and Applications in Continuous Control - ICML 2019">
+                    <img class="project__image img-responsive" src="action_robust.jpeg" alt="Action Robust Reinforcement Learning and Applications in Continuous Control">
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
-                        <a href="http://proceedings.mlr.press/v97/tessler19a.html" target="_blank" rel="noopener noreferrer">Action Robust Reinforcement Learning and Applications in Continuous Control - ICML 2019</a>
+                        <a href="http://proceedings.mlr.press/v97/tessler19a.html" target="_blank" rel="noopener noreferrer">Action Robust Reinforcement Learning and Applications in Continuous Control</a>
                     </span>
+                    </br>
+                    
+                        <span class="project__summary">
+                            <b>Published: </b>ICML 2019
+                        </span>
+                    
                     <span class="project__subtitle-small">
                         <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
                         A theoretically grounded approach to learning robust policies
@@ -217,12 +285,18 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://arxiv.org/pdf/1805.11074"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="rcpo.png" alt="Reward Constrained Policy Optimization - ICLR 2019">
+                    <img class="project__image img-responsive" src="rcpo.png" alt="Reward Constrained Policy Optimization">
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
-                        <a href="https://arxiv.org/pdf/1805.11074" target="_blank" rel="noopener noreferrer">Reward Constrained Policy Optimization - ICLR 2019</a>
+                        <a href="https://arxiv.org/pdf/1805.11074" target="_blank" rel="noopener noreferrer">Reward Constrained Policy Optimization</a>
                     </span>
+                    </br>
+                    
+                        <span class="project__summary">
+                            <b>Published: </b>ICLR 2019
+                        </span>
+                    
                     <span class="project__subtitle-small">
                         <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
                         Learning to satisfy constraints by converting the constraint into a discounted return
@@ -239,12 +313,18 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="hdrln.png" alt="A Deep Hierarchical Approach to Lifelong Learning in Minecraft - AAAI 2017">
+                    <img class="project__image img-responsive" src="hdrln.png" alt="A Deep Hierarchical Approach to Lifelong Learning in Minecraft">
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
-                        <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950" target="_blank" rel="noopener noreferrer">A Deep Hierarchical Approach to Lifelong Learning in Minecraft - AAAI 2017</a>
+                        <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950" target="_blank" rel="noopener noreferrer">A Deep Hierarchical Approach to Lifelong Learning in Minecraft</a>
                     </span>
+                    </br>
+                    
+                        <span class="project__summary">
+                            <b>Published: </b>AAAI 2017
+                        </span>
+                    
                     <span class="project__subtitle-small">
                         <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
                         Combining skills with deep RL enables solving complex high dimensional tasks
