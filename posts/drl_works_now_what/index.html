@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+    
+    
+    
+
+<title>Deep Reinforcement Learning Works - Now What? • Chen Tessler</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deep Reinforcement Learning Works - Now What?"/>
+<meta name="twitter:description" content="Two years ago, Alex Irpan wrote a post about why &ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]."/>
+
+<meta property="og:title" content="Deep Reinforcement Learning Works - Now What?" />
+<meta property="og:description" content="Two years ago, Alex Irpan wrote a post about why &ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tesslerc.github.io/posts/drl_works_now_what/" />
+<meta property="article:published_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-02T00:00:00+00:00" /><meta property="og:site_name" content="Chen Tessler" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://tesslerc.github.io/">Chen Tessler</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://tesslerc.github.io/img/chen_tessler.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Chen Tessler</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Publications</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/tesslerc" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/tesslerc" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/chentessler" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:chen.tessler@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Deep Reinforcement Learning Works - Now What?</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Mar 6, 2020
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/commentary">COMMENTARY</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/deep-learning">deep learning</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/reinforcement-learning">reinforcement learning</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 15 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>Two years ago, Alex Irpan wrote a post about why <a href="https://www.alexirpan.com/2018/02/14/rl-hard.html">&ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;</a>. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]. Moreover, we are now capable of training robust agents [27, 28] which can generalize to new and previously unseen domains!</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/QyJGXc9WeNo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<em>Credits: <a href="https://openai.com/blog/solving-rubiks-cube/">https://openai.com/blog/solving-rubiks-cube/</a></em></p>
+<p>Despite these advances, I argue that we, as a community, need to re-think several aspects. Below I highlight several fundamental problems, present some works which I believe are in the right direction and try to offer some plausible solutions.</p>
+<p>* I&rsquo;ll focus in this post on continuous control tasks, as this has been my main focus, but I believe that many of the insights and issues are relevant for discrete action spaces with visual inputs.</p>
+<hr>
+<h2 id="the-gap-between-theory-and-practice">The Gap Between Theory and Practice</h2>
+<p>When it comes to the difference between theory and practice, there is a huge difference between the reinforcement and supervised learning communities. While in both communities there is a gap between what is theoretically guaranteed and analyzable, and what practitioners do, due to the sequential aspects of the RL task, I argue that in RL the theoretical and practical communities are much further apart and have much to learn from each other.</p>
+<p>Direction 1) <strong>Practitioners have much to learn from the theoretical community</strong>. Often, the empirical community publish works which are in the right direction, but as they are unaware of the theoretical results/ignore them, the method is sub-optimal. We often see that fixing these methods, based on what is theoretically better, often works better in practice [31]. Moreover, in the empirical community practitioners often use inadequate models, such as stationary models for non-stationary MDPs, e.g., solve a finite horizon task like ATARI/MuJoCo using stationary models [30], and memory less models to solve POMDPs, such as sparse MuJoCo where the reward is accumulated across an entire trajectory and provided at the end [4].</p>
+<p>Direction 2) <strong>Theoreticians have much to learn from the empirical community</strong>. When we compare the focuses of the theoretical and empirical communities, there is a mismatch in the directions each is proceeding. Take for instance the concept of total regret analysis [32], a scheme for quantifying the sub-optimality of the agent throughout the entire learning process. However, is this truly the objective we are interested in? There may be some scenarios in which the agent is run online and we wish to estimate regret, but I argue that for the most part, agents will be trained in a confined scenario and our true objective of interest is the simple regret (i.e., the agents performance after T timesteps) &ndash; the common objective in deep RL research [28, 33, 34, 35]! In addition, while analysis mostly focuses on count-based methods, in DRL we can&rsquo;t count, but we can use Bayesian methods for uncertainty estimation, hence could Thompson sampling schemes may be a better fit [36].</p>
+<p>I believe that by going hand in hand &ndash; analyzing what we observe to be empirically better and the practical use-cases, in addition to implementing and extending methods which are theoretically motivated &ndash; can push the RL community to new heights.</p>
+<hr>
+<h2 id="were-solving-the-wrong-objective">We&rsquo;re Solving The Wrong Objective</h2>
+<p>I feel that one of the fundamental problems that plague the Deep RL (DRL) research community is the difference between what we aim to solve and what we solve in practice, and properly stating the differences and how this impacts our solution.</p>
+<p>Two major examples are (1) solving the infinite horizon task and (2) regularization methods.</p>
+<h3 id="the-infinite-horizon">The Infinite Horizon</h3>
+<p>A common theme in DRL is to evaluate our agents on the finite horizon returns, i.e., how much reward our agent can obtain within T time-steps. This may indeed be our objective of interest, or maybe we are unable to properly estimate the performance in an &ldquo;infinite horizon&rdquo;. However, the reason doesn&rsquo;t truly matter, this objective leads to a discrepancy between what our agents are trained to solve and what they solve in practice.</p>
+<p>As the task has a finite horizon, the optimal policy is not necessarily stationary &ndash; it may depend on the time remaining. For instance, a basketball player will take fewer risks at the start of the game, but when there is 1 second left on the timer, clearly, he will throw the ball regardless of his location and odds of success. Practical DRL methods ignore this fact and focus on stationary models.</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Kjwn5KzY4V0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<em>The basketball player throws (and in this case, scores) right before the game ends, an action which is strictly sub-optimal if the game had only begun.</em></p>
+<p>While the task has a finite horizon (is played for at most T time-steps before receiving a timeout signal), our algorithms are incapable of maximizing the total undiscounted reward. As such, all works perform discounting. The objective has now changed, and as shown by Blackwell [13], when ɣ isn&rsquo;t close enough to 1 (how close depends on the specific MDP), then the optimal policy for the ɣ-discounted task will not be identical to that of the total reward.</p>
+<p>It seems that in the problems we currently solve, this scheme works relatively well, however, it is not clear what happens in real-world tasks, and in problems which are less repetitive than ATARI [16] and MuJoCo [17].</p>
+<h3 id="regularization">Regularization</h3>
+<p>RL is a hard problem, there is no denying this fact. And many methods use one form or another of regularization, whether knowingly or not, in order to stabilize things. For instance, in continuous control, a common scheme is to smooth the action-value function by adding noise to the policy [1, 14]. This is a form of exploration-consciousness [15], such that the agent is required to find the best policy which has a certain degree of randomness &ndash; while the optimal policy in this setting may be sub-optimal compared to the optimal deterministic policy, this is an easier problem to solve [20].</p>
+<p>The above effect also happens when performing Q-learning with N-step returns. In this case, the Q value is computed by summing over N-1 steps in the experience replay, followed by bootstrapping the max value of the Nth state. As these transitions are off-policy, they contain the ε-exploration. For true estimates, the N-step return should be computed using a Tree Backup procedure [19]. However, practical methods utilize the data as-is [18], effectively including exploration and sub-optimal actions in the mix.</p>
+<p>These methods aren&rsquo;t wrong, they simply incorporate regularization in some form. But, it is important to consider how our objective changes when we apply one operator or another and to communicate these differences.</p>
+<hr>
+<h2 id="hyper-parameters">Hyper Parameters?</h2>
+<p>In previous work of mine [8, 10], I was very proud of the fact that we performed a hyperparameter sweep on a single domain. These parameters, combined with the proposed training process and loss were evaluated across multiple new domains, which were not used for parameter selection.</p>
+<p>This may seem like a legitimate approach and obviously, we were not the first to do this [11 - before us, but also not the first]. However, this method prevents us from understanding the fundamental properties of the task.</p>
+<p>For instance, consider the discount factor ɣ. When we tackle new environments and produce new algorithms, the common approach is to work with ɣ = 0.99. But why? Commonly, the goal is not to solve the ɣ-discounted infinite-horizon task, but rather ɣ provides us with algorithmic stability. When then, should we select ɣ = 0.99?</p>
+<p>It makes sense, that different algorithms and different environments would exhibit different behavior under varying discount factors. While one algorithm may enjoy improved stability due to ɣ = 0.99, for another it may hinder learning, such that a higher discount may be required, or a much smaller one. Moreover, different environments behave differently. A set of parameters optimal for one environment may be deemed strictly sub-optimal for another.</p>
+<p><figure>
+    <img src="/posts/hopper_gamma.png"/> 
+</figure>
+
+<figure>
+    <img src="/posts/swimmer_gamma.png"/> 
+</figure>
+
+<em>Comparison of the TD3 [1] algorithm with two different discount factors on two domains. We observe that while in the Hopper-v2 a discount of 0.99 is optimal for this algorithm in this task, this isn&rsquo;t the case for the Swimmer-v2 task, where we must consider larger planning horizons.</em></p>
+<p>In addition to the figure above, we take a deeper look into the Hopper-v2 domain, analyzing how the performance changes as the discount factor varies.</p>
+<p><figure>
+    <img src="/posts/hopper_pareto_front.png"/> 
+</figure>
+
+<em>The performance of TD3 [1] on the Hopper-v2 domain as a function of the discount factor.</em></p>
+<p>We observe two regions, which are algorithm and domain-dependent. The first is the well-known region of ɣ &lt; 0.99, here, the effective planning horizon Teff = 1 / (1 - ɣ) is too low. As the agent is effectively planning for a short horizon it is incapable of properly solving the task. On the other hand, the more interesting region is at ɣ &gt; 0.99. When the discount factor is too large, the algorithm suffers from instability, resulting in suboptimal performance.</p>
+<p>Hence, as our goal is to maximize the performance in the MDP, the hyperparameters for each domain are simply another set of parameters for the RL algorithm to optimize,  either manually or automatically [9].</p>
+<hr>
+<h2 id="evaluating-your-policy--added-sample-complexity">Evaluating Your Policy = Added Sample Complexity</h2>
+<p>I argue that the way we report the performance of our algorithm impacts how we measure its sample complexity. Performance can be reported graphically, showing the performance of the agent after t steps, essentially reporting what performance to expect from the algorithm if training would end at this time.</p>
+<p>An additional form is as a table. Here, the two common metrics are (1) the best performance of the agent during training [1, 7] and (2) the performance of the final policy [8]. While seemingly similar, which method we decide to report has a huge impact on the algorithms sample complexity.</p>
+<p>When considering the performance of the final policy, evaluation during training does not affect the performance of the selected policy. It simply helps us produce the graphical visualization showing what performance to expect when training ends early. On the other hand, when we report the performance of the best agent, we are utilizing this evaluation phase in order to determine which policy to use. Clearly, the evaluation steps in this setting are crucial and thus must be considered as part of the algorithms sample complexity.</p>
+<p>* <em>Side note. When presenting the performance of the best policy during training &ndash; the policy has to be re-evaluated, as in [7], in order to ensure a proper unbiased estimate of its expected performance.</em></p>
+<hr>
+<h2 id="lack-of-simple-evaluation-environments">Lack of Simple Evaluation Environments</h2>
+<p>Deep RL has gone a long way since the DQN [7] was first introduced. There have been multiple advances along several fronts, yielding impressive results both in simulation and real life. Now that we have arrived at a point where we can proudly say &ldquo;Deep RL does work&rdquo;, I think we should take a step back and focus on the fundamentals.</p>
+<p>By focusing on the fundamentals I do not necessarily mean tabular grid worlds, but on simple and analyzable domains from which we may derive meaningful conclusions about our algorithms. Most importantly, domains where we know what is the best possible reward. For instance, Humanoid-v2 has been long considered a complex task and previously reported results on the TD3 algorithm have shown it to utterly fail [13].</p>
+<p><figure>
+    <img src="/posts/humanoid.png"/> 
+</figure>
+
+<em>TD3 results on the Humanoid-v2 domain averaged over 5 random seeds.</em></p>
+<p>However, with a little hyper-parameter tuning we are capable of obtaining results which are competitive with the current SOTA. Are these results the best possible? Can existing algorithmic improvements take us further? Which algorithm is the best fit for continuous control tasks and why?</p>
+<p>As each paper is incapable of performing precise parameter sweeps, and as there are many aspects such as weight initialization, network sizes, etc&hellip; It is not clear what role the various algorithmic improvements take. Do they truly improve our performance, or are the main benefits obtained by the additional tuning we perform in each paper? Currently, answering this question is of great importance, yet it isn&rsquo;t easy. As we saw above, a very simple algorithm (TD3), combined with additional hyperparameter tuning, matches the performance of more complex methods such as OAC [29].</p>
+<p>A proper understanding of the algorithms is crucial for proper advancement as a community. BSuite [6] provides several domains, in which we are capable of analytically calculating the optimal policy and thus compare metrics such as (1) simple regret and (2) total regret. While this does not yet include robotics domains, i.e., continuous action spaces, it enables the isolation of specific algorithmic properties that we would like to test. For instance, one domain may focus on non-stationarity while another on the hardness of exploration.</p>
+<hr>
+<h2 id="closing-words">Closing Words</h2>
+<p>While I tried to highlight some issues I have encountered, and fallen for myself during my research; the state of DRL isn&rsquo;t as bad as it used to be. We can proudly say that <strong>Deep RL does work</strong>, and there are many exciting lines of work that knowingly or not tackle the problems I have highlighted here.</p>
+<p>An under-rated method is Evolution Strategies [2]. Also commonly referred to as random search, ES is capable of optimizing the real objective. By changing the policy, evaluating it on the total reward, and updating the weights based on the performance improvement, this scheme directly optimizes the policy with respect to the total reward.</p>
+<p>Reward-Conditioned Policies [5] and Upside Down RL [3,4] convert the reinforcement learning problem into that of supervised learning. While many questions remain open (good for us! we can publish!), this line of work seems promising and may continue to surprise in the future, as supervised learning is a well-explored learning paradigm with many properties that RL can benefit from.</p>
+<p>It&rsquo;s important to reflect back on what we have done, and what we can do better in the future. The fact that Deep RL does work enables us to take this step back and drive the field to new heights :).</p>
+<p><strong>Comment below!</strong></p>
+<hr>
+<h3 id="bibliography">Bibliography</h3>
+<p>[1] Fujimoto, Scott, Herke Hoof, and David Meger. &ldquo;Addressing Function Approximation Error in Actor-Critic Methods.&rdquo; International Conference on Machine Learning. 2018.</p>
+<p>[2] Salimans, Tim, et al. &ldquo;Evolution strategies as a scalable alternative to reinforcement learning.&rdquo; arXiv preprint arXiv:1703.03864 (2017).</p>
+<p>[3] Schmidhuber, Juergen. &ldquo;Reinforcement Learning Upside Down: Don&rsquo;t Predict Rewards&ndash;Just Map Them to Actions.&rdquo; arXiv preprint arXiv:1912.02875 (2019).</p>
+<p>[4] Srivastava, Rupesh Kumar, et al. &ldquo;Training Agents using Upside-Down Reinforcement Learning.&rdquo; arXiv preprint arXiv:1912.02877 (2019).</p>
+<p>[5] Kumar, Aviral, Xue Bin Peng, and Sergey Levine. &ldquo;Reward-Conditioned Policies.&rdquo; arXiv preprint arXiv:1912.13465 (2019).</p>
+<p>[6] Osband, Ian, et al. &ldquo;Behaviour suite for reinforcement learning.&rdquo; arXiv preprint arXiv:1908.03568 (2019).</p>
+<p>[7] Mnih, Volodymyr, et al. &ldquo;Human-level control through deep reinforcement learning.&rdquo; Nature 518.7540 (2015): 529-533.</p>
+<p>[8] Tessler, Chen, Daniel J. Mankowitz, and Shie Mannor. &ldquo;Reward constrained policy optimization.&rdquo; arXiv preprint arXiv:1805.11074 (2018).</p>
+<p>[9] Xu, Zhongwen, Hado P. van Hasselt, and David Silver. &ldquo;Meta-gradient reinforcement learning.&rdquo; Advances in neural information processing systems. 2018.</p>
+<p>[10] Tessler, Chen, Yonathan Efroni, and Shie Mannor. &ldquo;Action Robust Reinforcement Learning and Applications in Continuous Control.&rdquo; International Conference on Machine Learning. 2019.</p>
+<p>[11] Schulman, John, et al. &ldquo;Proximal policy optimization algorithms.&rdquo; arXiv preprint arXiv:1707.06347 (2017).</p>
+<p>[12] Blackwell, David. &ldquo;Discrete dynamic programming.&rdquo; The Annals of Mathematical Statistics (1962): 719-726.</p>
+<p>[13] Haarnoja, Tuomas, et al. &ldquo;Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor.&rdquo; International Conference on Machine Learning. 2018.</p>
+<p>[14] Tessler, Chen, Guy Tennenholtz, and Shie Mannor. &ldquo;Distributional policy optimization: An alternative approach for continuous control.&rdquo; Advances in Neural Information Processing Systems. 2019.</p>
+<p>[15] Shani, Lior, Yonathan Efroni, and Shie Mannor. &ldquo;Exploration Conscious Reinforcement Learning Revisited.&rdquo; International Conference on Machine Learning. 2019.</p>
+<p>[16] Bellemare, Marc G., et al. &ldquo;The arcade learning environment: An evaluation platform for general agents.&rdquo; Journal of Artificial Intelligence Research 47 (2013): 253-279.</p>
+<p>[17] Todorov, Emanuel, Tom Erez, and Yuval Tassa. &ldquo;Mujoco: A physics engine for model-based control.&rdquo; 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems. IEEE, 2012.</p>
+<p>[18] Hessel, Matteo, et al. &ldquo;Rainbow: Combining improvements in deep reinforcement learning.&rdquo; Thirty-Second AAAI Conference on Artificial Intelligence. 2018.</p>
+<p>[19] Precup, Doina. &ldquo;Eligibility traces for off-policy policy evaluation.&rdquo; Computer Science Department Faculty Publication Series (2000): 80.</p>
+<p>[20] Arumugam, Dilip, et al. &ldquo;Mitigating planner overfitting in model-based reinforcement learning.&rdquo; arXiv preprint arXiv:1812.01129 (2018).</p>
+<p>[21] Cuccu, Giuseppe, Julian Togelius, and Philippe Cudré-Mauroux. &ldquo;Playing atari with six neurons.&rdquo; Proceedings of the 18th international conference on autonomous agents and multiagent systems. International Foundation for Autonomous Agents and Multiagent Systems, 2019.</p>
+<p>[22] Fujimoto, Scott, David Meger, and Doina Precup. &ldquo;Off-Policy Deep Reinforcement Learning without Exploration.&rdquo; International Conference on Machine Learning. 2019.</p>
+<p>[23] Kumar, Aviral, et al. &ldquo;Stabilizing off-policy q-learning via bootstrapping error reduction.&rdquo; Advances in Neural Information Processing Systems. 2019.</p>
+<p>[24] Brown, Daniel, et al. &ldquo;Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations.&rdquo; International Conference on Machine Learning. 2019.</p>
+<p>[25] Christiano, Paul F., et al. &ldquo;Deep reinforcement learning from human preferences.&rdquo; Advances in Neural Information Processing Systems. 2017.</p>
+<p>[26] Abdolmaleki, Abbas, et al. &ldquo;Maximum a posteriori policy optimisation.&rdquo; arXiv preprint arXiv:1806.06920 (2018).</p>
+<p>[27] Peng, Xue Bin, et al. &ldquo;Deepmimic: Example-guided deep reinforcement learning of physics-based character skills.&rdquo; ACM Transactions on Graphics (TOG) 37.4 (2018): 1-14.</p>
+<p>[28] Akkaya, Ilge, et al. &ldquo;Solving Rubik&rsquo;s Cube with a Robot Hand.&rdquo; arXiv preprint arXiv:1910.07113 (2019).</p>
+<p>[29] Ciosek, Kamil, et al. &ldquo;Better Exploration with Optimistic Actor Critic.&rdquo; Advances in Neural Information Processing Systems. 2019.</p>
+<p>[30] Lillicrap, Timothy P., et al. &ldquo;Continuous control with deep reinforcement learning.&rdquo; International Conference on Learning Representations. 2016.</p>
+<p>[31] Choshen, Leshem, Lior Fox, and Yonatan Loewenstein. &ldquo;Dora the explorer: Directed outreaching reinforcement action-selection.&rdquo; International Conference on Learning Representations. 2018.</p>
+<p>[32] Jaksch, Thomas, Ronald Ortner, and Peter Auer. &ldquo;Near-optimal regret bounds for reinforcement learning.&rdquo; Journal of Machine Learning Research 11.Apr (2010): 1563-1600.</p>
+<p>[33] Silver, David, et al. &ldquo;Mastering the game of go without human knowledge.&rdquo; Nature 550.7676 (2017): 354-359.</p>
+<p>[34] Vinyals, Oriol, et al. &ldquo;Grandmaster level in StarCraft II using multi-agent reinforcement learning.&rdquo; Nature 575.7782 (2019): 350-354.</p>
+<p>[35] Berner, Christopher, et al. &ldquo;Dota 2 with Large Scale Deep Reinforcement Learning.&rdquo; arXiv preprint arXiv:1912.06680 (2019).</p>
+<p>[36] Zintgraf, Luisa, et al. &ldquo;VariBAD: A Very Good Method for Bayes-Adaptive Deep RL via Meta-Learning.&rdquo; International Conference on Learning Representations. 2019.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="graphcomment"></div>
+<script type="text/javascript">
+  window.graphcomment_id = 'Personal-Website';
+   
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+</script>
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

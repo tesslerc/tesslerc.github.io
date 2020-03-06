@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chen Tessler</title>
-    <link>https://tesslerc.github.io/</link>
-    <description>Recent content on Chen Tessler</description>
+    <title>Publications on Chen Tessler</title>
+    <link>https://tesslerc.github.io/portfolio/</link>
+    <description>Recent content in Publications on Chen Tessler</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://tesslerc.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tesslerc.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Deep Reinforcement Learning Works - Now What?</title>
-      <link>https://tesslerc.github.io/posts/drl_works_now_what/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tesslerc.github.io/posts/drl_works_now_what/</guid>
-      <description>Two years ago, Alex Irpan wrote a post about why &amp;ldquo;Deep Reinforcement Learning Doesn&amp;rsquo;t Work Yet&amp;rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26].</description>
-    </item>
     
     <item>
       <title>Distributional Policy Optimization: An Alternative Approach for Continuous Control - NeurIPS 2019</title>
@@ -45,16 +36,6 @@
       
       <guid>https://tesslerc.github.io/portfolio/rcpo/</guid>
       <description>Learning a policy which adheres to behavioral constraints is an important task. Our algorithm, RCPO, enables the satisfaction of not only discounted constraints but also average and probabilistic, in an efficient manner.</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://tesslerc.github.io/about/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://tesslerc.github.io/about/</guid>
-      <description>I&amp;rsquo;m currently pursuing my P.hD in Reinforcement Learning at the Technion Institute of Technology, Israel, under the supervision of Prof. Shie Mannor.
-Reinforcement Learning (RL) is a learning paradigm that highly resembles how we, as humans, learn. The agent, i.e., the learning algorithm, learns through interaction with the environment. By observing the current state of the system, it decides what action to take, after which the environment transitions to a new state and produces the agent with a reward.</description>
     </item>
     
     <item>

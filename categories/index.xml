@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Chen Tessler</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tesslerc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Commentary</title>
+      <link>https://tesslerc.github.io/categories/commentary/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tesslerc.github.io/categories/commentary/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
