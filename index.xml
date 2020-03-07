@@ -17,7 +17,7 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/posts/drl_works_now_what/</guid>
-      <description>Two years ago, Alex Irpan wrote a post about why &amp;ldquo;Deep Reinforcement Learning Doesn&amp;rsquo;t Work Yet&amp;rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26].</description>
+      <description>It&amp;rsquo;s safe to assume that deep reinforcement learning does indeed work. This is backed by recent trends which have achieved tremendous feats. An important question is — now what? In this post I question certain trends in deep RL research and propose some insights and solutions.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/portfolio/reward_tweaking/</guid>
-      <description>In many practical applications, we train the agent on the ɣ-discounted task and evaluate it on the total reward. The discrepancy between training and evaluation may lead to sub-optimal solutions. Reward tweaking learns an alternative surrogate reward, aimed to guide the agent towards better behavior on the evaluation metric.</description>
+      <description>In many practical applications, we train the agent on the $\gamma$-discounted task and evaluate it on the total reward. The discrepancy between training and evaluation may lead to sub-optimal solutions. Reward tweaking learns an alternative surrogate reward, aimed to guide the agent towards better behavior on the evaluation metric.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/portfolio/coirl/</guid>
-      <description>We analyze the problem of performing inverse reinforcement learning in contextual MDPs.</description>
+      <description>Real-world sequential decision problems often share two important properties &amp;ndash; the reward function is often unknown, yet expert demonstrations can be acquired, and there often exists a static parameter, also known as the context, which determines certain aspects of the problem. In this work we formalize the Contextual Inverse Reinforcement Learning framework, propose several algorithms and analyze them both theoretically and empirically.</description>
     </item>
     
     <item>

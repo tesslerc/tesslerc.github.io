@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Chen Tessler</title>
+    <title>Research on Chen Tessler</title>
     <link>https://tesslerc.github.io/portfolio/</link>
-    <description>Recent content in Publications on Chen Tessler</description>
+    <description>Recent content in Research on Chen Tessler</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/portfolio/reward_tweaking/</guid>
-      <description>In many practical applications, we train the agent on the ɣ-discounted task and evaluate it on the total reward. The discrepancy between training and evaluation may lead to sub-optimal solutions. Reward tweaking learns an alternative surrogate reward, aimed to guide the agent towards better behavior on the evaluation metric.</description>
+      <description>In many practical applications, we train the agent on the $\gamma$-discounted task and evaluate it on the total reward. The discrepancy between training and evaluation may lead to sub-optimal solutions. Reward tweaking learns an alternative surrogate reward, aimed to guide the agent towards better behavior on the evaluation metric.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/portfolio/coirl/</guid>
-      <description>We analyze the problem of performing inverse reinforcement learning in contextual MDPs.</description>
+      <description>Real-world sequential decision problems often share two important properties &amp;ndash; the reward function is often unknown, yet expert demonstrations can be acquired, and there often exists a static parameter, also known as the context, which determines certain aspects of the problem. In this work we formalize the Contextual Inverse Reinforcement Learning framework, propose several algorithms and analyze them both theoretically and empirically.</description>
     </item>
     
     <item>

@@ -22,10 +22,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Deep Reinforcement Learning Works - Now What?"/>
-<meta name="twitter:description" content="Two years ago, Alex Irpan wrote a post about why &ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]."/>
+<meta name="twitter:description" content="It&rsquo;s safe to assume that deep reinforcement learning does indeed work. This is backed by recent trends which have achieved tremendous feats. An important question is — now what? In this post I question certain trends in deep RL research and propose some insights and solutions."/>
 
 <meta property="og:title" content="Deep Reinforcement Learning Works - Now What?" />
-<meta property="og:description" content="Two years ago, Alex Irpan wrote a post about why &ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]." />
+<meta property="og:description" content="It&rsquo;s safe to assume that deep reinforcement learning does indeed work. This is backed by recent trends which have achieved tremendous feats. An important question is — now what? In this post I question certain trends in deep RL research and propose some insights and solutions." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tesslerc.github.io/posts/drl_works_now_what/" />
 <meta property="article:published_time" content="2020-03-02T00:00:00+00:00" />
@@ -44,7 +44,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+<link rel="stylesheet" href="/scss/hyde-hyde.c50d19c525ff8843efd1ff712c578bbd3f5fe1df5bdd97156776494a3e54f961.css" integrity="sha256-xQ0ZxSX/iEPv0f9xLFeLvT9f4d9b3ZcVZ3ZJSj5U&#43;WE=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -62,6 +62,34 @@
     
     
 
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
 </head>
 
 
@@ -114,7 +142,7 @@
 			 
 				<li>
 					<a href="/portfolio/">
-						<span>Publications</span>
+						<span>Research</span>
 					</a>
 				</li>
 			 
@@ -241,7 +269,7 @@
 </div>
 
 <em>The basketball player throws (and in this case, scores) right before the game ends, an action which is strictly sub-optimal if the game had only begun.</em></p>
-<p>While the task has a finite horizon (is played for at most T time-steps before receiving a timeout signal), our algorithms are incapable of maximizing the total undiscounted reward. As such, all works perform discounting. The objective has now changed, and as shown by Blackwell [13], when ɣ isn&rsquo;t close enough to 1 (how close depends on the specific MDP), then the optimal policy for the ɣ-discounted task will not be identical to that of the total reward.</p>
+<p>While the task has a finite horizon (is played for at most T time-steps before receiving a timeout signal), our algorithms are incapable of maximizing the total undiscounted reward. As such, all works perform discounting. The objective has now changed, and as shown by Blackwell [13], when $\gamma$ isn&rsquo;t close enough to $1$ (how close depends on the specific MDP), then the optimal policy for the $\gamma$-discounted task will not be identical to that of the total reward.</p>
 <p>It seems that in the problems we currently solve, this scheme works relatively well, however, it is not clear what happens in real-world tasks, and in problems which are less repetitive than ATARI [16] and MuJoCo [17].</p>
 <h3 id="regularization">Regularization</h3>
 <p>RL is a hard problem, there is no denying this fact. And many methods use one form or another of regularization, whether knowingly or not, in order to stabilize things. For instance, in continuous control, a common scheme is to smooth the action-value function by adding noise to the policy [1, 14]. This is a form of exploration-consciousness [15], such that the agent is required to find the best policy which has a certain degree of randomness &ndash; while the optimal policy in this setting may be sub-optimal compared to the optimal deterministic policy, this is an easier problem to solve [20].</p>
@@ -251,8 +279,8 @@
 <h2 id="hyper-parameters">Hyper Parameters?</h2>
 <p>In previous work of mine [8, 10], I was very proud of the fact that we performed a hyperparameter sweep on a single domain. These parameters, combined with the proposed training process and loss were evaluated across multiple new domains, which were not used for parameter selection.</p>
 <p>This may seem like a legitimate approach and obviously, we were not the first to do this [11 - before us, but also not the first]. However, this method prevents us from understanding the fundamental properties of the task.</p>
-<p>For instance, consider the discount factor ɣ. When we tackle new environments and produce new algorithms, the common approach is to work with ɣ = 0.99. But why? Commonly, the goal is not to solve the ɣ-discounted infinite-horizon task, but rather ɣ provides us with algorithmic stability. When then, should we select ɣ = 0.99?</p>
-<p>It makes sense, that different algorithms and different environments would exhibit different behavior under varying discount factors. While one algorithm may enjoy improved stability due to ɣ = 0.99, for another it may hinder learning, such that a higher discount may be required, or a much smaller one. Moreover, different environments behave differently. A set of parameters optimal for one environment may be deemed strictly sub-optimal for another.</p>
+<p>For instance, consider the discount factor $\gamma$. When we tackle new environments and produce new algorithms, the common approach is to work with $\gamma = 0.99$. But why? Commonly, the goal is not to solve the $\gamma$-discounted infinite-horizon task, but rather $\gamma$ provides us with algorithmic stability. When then, should we select $\gamma = 0.99$?</p>
+<p>It makes sense, that different algorithms and different environments would exhibit different behavior under varying discount factors. While one algorithm may enjoy improved stability due to $\gamma = 0.99$, for another it may hinder learning, such that a higher discount may be required, or a much smaller one. Moreover, different environments behave differently. A set of parameters optimal for one environment may be deemed strictly sub-optimal for another.</p>
 <p><figure>
     <img src="/posts/hopper_gamma.png"/> 
 </figure>
@@ -261,14 +289,14 @@
     <img src="/posts/swimmer_gamma.png"/> 
 </figure>
 
-<em>Comparison of the TD3 [1] algorithm with two different discount factors on two domains. We observe that while in the Hopper-v2 a discount of 0.99 is optimal for this algorithm in this task, this isn&rsquo;t the case for the Swimmer-v2 task, where we must consider larger planning horizons.</em></p>
+<em>Comparison of the TD3 [1] algorithm with two different discount factors on two domains. We observe that while in the Hopper-v2 a discount of $0.99$ is optimal for this algorithm in this task, this isn&rsquo;t the case for the Swimmer-v2 task, where we must consider larger planning horizons.</em></p>
 <p>In addition to the figure above, we take a deeper look into the Hopper-v2 domain, analyzing how the performance changes as the discount factor varies.</p>
 <p><figure>
     <img src="/posts/hopper_pareto_front.png"/> 
 </figure>
 
 <em>The performance of TD3 [1] on the Hopper-v2 domain as a function of the discount factor.</em></p>
-<p>We observe two regions, which are algorithm and domain-dependent. The first is the well-known region of ɣ &lt; 0.99, here, the effective planning horizon Teff = 1 / (1 - ɣ) is too low. As the agent is effectively planning for a short horizon it is incapable of properly solving the task. On the other hand, the more interesting region is at ɣ &gt; 0.99. When the discount factor is too large, the algorithm suffers from instability, resulting in suboptimal performance.</p>
+<p>We observe two regions, which are algorithm and domain-dependent. The first is the well-known region of $\gamma &lt; 0.99$, here, the effective planning horizon $T_eff = 1 / (1 - \gamma)$ is too low. As the agent is effectively planning for a short horizon it is incapable of properly solving the task. On the other hand, the more interesting region is at $\gamma &gt; 0.99$. When the discount factor is too large, the algorithm suffers from instability, resulting in suboptimal performance.</p>
 <p>Hence, as our goal is to maximize the performance in the MDP, the hyperparameters for each domain are simply another set of parameters for the RL algorithm to optimize,  either manually or automatically [9].</p>
 <hr>
 <h2 id="evaluating-your-policy--added-sample-complexity">Evaluating Your Policy = Added Sample Complexity</h2>
@@ -293,7 +321,7 @@
 <p>While I tried to highlight some issues I have encountered, and fallen for myself during my research; the state of DRL isn&rsquo;t as bad as it used to be. We can proudly say that <strong>Deep RL does work</strong>, and there are many exciting lines of work that knowingly or not tackle the problems I have highlighted here.</p>
 <p>An under-rated method is Evolution Strategies [2]. Also commonly referred to as random search, ES is capable of optimizing the real objective. By changing the policy, evaluating it on the total reward, and updating the weights based on the performance improvement, this scheme directly optimizes the policy with respect to the total reward.</p>
 <p>Reward-Conditioned Policies [5] and Upside Down RL [3,4] convert the reinforcement learning problem into that of supervised learning. While many questions remain open (good for us! we can publish!), this line of work seems promising and may continue to surprise in the future, as supervised learning is a well-explored learning paradigm with many properties that RL can benefit from.</p>
-<p>It&rsquo;s important to reflect back on what we have done, and what we can do better in the future. The fact that Deep RL does work enables us to take this step back and drive the field to new heights :).</p>
+<p>It&rsquo;s important to reflect back on what we have done, and what we can do better in the future. The fact that Deep RL does work enables us to take this step back and drive the field to new heights 💪.</p>
 <p><strong>Comment below!</strong></p>
 <hr>
 <h3 id="bibliography">Bibliography</h3>

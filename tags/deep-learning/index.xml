@@ -17,7 +17,7 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/posts/drl_works_now_what/</guid>
-      <description>Two years ago, Alex Irpan wrote a post about why &amp;ldquo;Deep Reinforcement Learning Doesn&amp;rsquo;t Work Yet&amp;rdquo;. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26].</description>
+      <description>It&amp;rsquo;s safe to assume that deep reinforcement learning does indeed work. This is backed by recent trends which have achieved tremendous feats. An important question is — now what? In this post I question certain trends in deep RL research and propose some insights and solutions.</description>
     </item>
     
   </channel>

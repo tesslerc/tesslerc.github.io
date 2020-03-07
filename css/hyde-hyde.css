@@ -239,9 +239,9 @@ a {
   color: rgba(255, 255, 255, 0.5);
   padding: 2rem 1rem;
   text-align: center; }
-  .sidebar a {
-    color: #f9f9f9;
-    border: none; }
+    .sidebar a {
+      color: #f9f9f9;
+      border: none; }
     .sidebar a:hover {
       color: #268bd2; }
     .sidebar a:focus {

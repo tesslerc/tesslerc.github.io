@@ -38,7 +38,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+<link rel="stylesheet" href="/scss/hyde-hyde.c50d19c525ff8843efd1ff712c578bbd3f5fe1df5bdd97156776494a3e54f961.css" integrity="sha256-xQ0ZxSX/iEPv0f9xLFeLvT9f4d9b3ZcVZ3ZJSj5U&#43;WE=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -57,6 +57,34 @@
 
     
 
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
 </head>
 
 
@@ -109,7 +137,7 @@
 			 
 				<li>
 					<a href="/portfolio/">
-						<span>Publications</span>
+						<span>Research</span>
 					</a>
 				</li>
 			 
@@ -161,158 +189,194 @@
 
         <div class="content container">
             
-  <div class="post-list">
-    
-    
-      
+  <span class="section__title">Accepted Papers</span>
+    <hr class="divider">
+    <section>
+      <div class="portfolio__content">
         
-      
-
-    
-     
-      
         
-      
+          
+            
+          
 
-    
-     
-      
         
-      
+         
+          
+            
+          
 
-    
-
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12" href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control"
-                target="_blank" rel="noopener noreferrer">
-                <img class="project__image img-responsive" src="portfolio/dpo.png" alt="Distributional Policy Optimization: An Alternative Approach for Continuous Control">
-            </div>
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <span class="project__title">
-                    <a href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control" target="_blank" rel="noopener noreferrer">Distributional Policy Optimization: An Alternative Approach for Continuous Control</a>
-                </span>
-                </br>
-                <span class="project__summary">
-                    <b>Published: </b>NeurIPS 2019
-                </span>
-                <span class="project__subtitle-small">
-                    <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
-                    A generative model for the policy enables the agent to overcome local optima
-                    <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
-                </span>
-                <span class="project__summary">
-                    <p>We propose a method for learning distributional policies, policies which are not limited to parametric distribution functions (e.g., Gaussian and Delta). This approach overcomes sub-optimal local extremum in continuous control regimes.</p>
-
-                </span>
-            </div>
-        </div>
-        <div class="row-space">&nbsp;</div>
-
-    
-     
-      
         
-      
+         
+          
+            
+          
 
-    
-
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12" href="http://proceedings.mlr.press/v97/tessler19a.html"
-                target="_blank" rel="noopener noreferrer">
-                <img class="project__image img-responsive" src="portfolio/action_robust.jpeg" alt="Action Robust Reinforcement Learning and Applications in Continuous Control">
-            </div>
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <span class="project__title">
-                    <a href="http://proceedings.mlr.press/v97/tessler19a.html" target="_blank" rel="noopener noreferrer">Action Robust Reinforcement Learning and Applications in Continuous Control</a>
-                </span>
-                </br>
-                <span class="project__summary">
-                    <b>Published: </b>ICML 2019
-                </span>
-                <span class="project__subtitle-small">
-                    <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
-                    A theoretically grounded approach to learning robust policies
-                    <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
-                </span>
-                <span class="project__summary">
-                    <p>Action Robust is a special case of robustness, in which the agent is robust to uncertainty in the performed action. We show (theoretically) that this form of robustness has efficient solutions and (empirically) results in policies which are robust to common uncertainties in robotic domains.</p>
-
-                </span>
-            </div>
-        </div>
-        <div class="row-space">&nbsp;</div>
-
-    
-     
-      
         
-      
 
-    
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12" href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control"
+                    target="_blank" rel="noopener noreferrer">
+                    <a href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control" target="_blank" rel="noopener noreferrer">
+                        <img class="project__image img-responsive" src="portfolio/dpo.png" alt="Distributional Policy Optimization: An Alternative Approach for Continuous Control">
+                    </a>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <span class="project__title">
+                        <a href="https://papers.nips.cc/paper/8416-distributional-policy-optimization-an-alternative-approach-for-continuous-control" target="_blank" rel="noopener noreferrer">Distributional Policy Optimization: An Alternative Approach for Continuous Control</a>
+                    </span>
+                    
+                        </br>
+                        <span class="project__authors">
+                            Chen Tessler*, Guy Tennenholtz* and Shie Mannor
+                        </span>
+                    
+                    </br>
+                    <span class="project__summary">
+                        <b>Published: </b>NeurIPS 2019
+                    </span>
+                    <span class="project__subtitle-small">
+                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                        A generative model for the policy enables the agent to overcome local optima
+                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                    </span>
+                    <span class="project__summary">
+                        <p>We propose a method for learning distributional policies, policies which are not limited to parametric distribution functions (e.g., Gaussian and Delta). This approach overcomes sub-optimal local extremum in continuous control regimes.</p>
 
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12" href="https://arxiv.org/pdf/1805.11074"
-                target="_blank" rel="noopener noreferrer">
-                <img class="project__image img-responsive" src="portfolio/rcpo.png" alt="Reward Constrained Policy Optimization">
+                    </span>
+                </div>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <span class="project__title">
-                    <a href="https://arxiv.org/pdf/1805.11074" target="_blank" rel="noopener noreferrer">Reward Constrained Policy Optimization</a>
-                </span>
-                </br>
-                <span class="project__summary">
-                    <b>Published: </b>ICLR 2019
-                </span>
-                <span class="project__subtitle-small">
-                    <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
-                    Learning to satisfy constraints by converting the constraint into a discounted return
-                    <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
-                </span>
-                <span class="project__summary">
-                    <p>Learning a policy which adheres to behavioral constraints is an important task. Our algorithm, RCPO, enables the satisfaction of not only discounted constraints but also average and probabilistic, in an efficient manner.</p>
+            <div class="row-space">&nbsp;</div>
 
-                </span>
-            </div>
-        </div>
-        <div class="row-space">&nbsp;</div>
-
-    
-     
-      
         
-      
+         
+          
+            
+          
 
-    
+        
 
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12" href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950"
-                target="_blank" rel="noopener noreferrer">
-                <img class="project__image img-responsive" src="portfolio/hdrln.png" alt="A Deep Hierarchical Approach to Lifelong Learning in Minecraft">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12" href="http://proceedings.mlr.press/v97/tessler19a.html"
+                    target="_blank" rel="noopener noreferrer">
+                    <a href="http://proceedings.mlr.press/v97/tessler19a.html" target="_blank" rel="noopener noreferrer">
+                        <img class="project__image img-responsive" src="portfolio/action_robust.jpeg" alt="Action Robust Reinforcement Learning and Applications in Continuous Control">
+                    </a>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <span class="project__title">
+                        <a href="http://proceedings.mlr.press/v97/tessler19a.html" target="_blank" rel="noopener noreferrer">Action Robust Reinforcement Learning and Applications in Continuous Control</a>
+                    </span>
+                    
+                        </br>
+                        <span class="project__authors">
+                            Chen Tessler*, Yonathan Efroni* and Shie Mannor
+                        </span>
+                    
+                    </br>
+                    <span class="project__summary">
+                        <b>Published: </b>ICML 2019
+                    </span>
+                    <span class="project__subtitle-small">
+                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                        A theoretically grounded approach to learning robust policies
+                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                    </span>
+                    <span class="project__summary">
+                        <p>Action Robust is a special case of robustness, in which the agent is robust to uncertainty in the performed action. We show (theoretically) that this form of robustness has efficient solutions and (empirically) results in policies which are robust to common uncertainties in robotic domains.</p>
+
+                    </span>
+                </div>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <span class="project__title">
-                    <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950" target="_blank" rel="noopener noreferrer">A Deep Hierarchical Approach to Lifelong Learning in Minecraft</a>
-                </span>
-                </br>
-                <span class="project__summary">
-                    <b>Published: </b>AAAI 2017
-                </span>
-                <span class="project__subtitle-small">
-                    <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
-                    Combining skills with deep RL enables solving complex high dimensional tasks
-                    <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
-                </span>
-                <span class="project__summary">
-                    <p>We propose a lifelong learning system that has the ability to reuse and transfer knowledge from one task to another while efficiently retaining the previously learned knowledge-base. Knowledge is transferred by learning reusable skills to solve tasks in Minecraft, a popular video game which is an unsolved and high-dimensional lifelong learning problem.</p>
+            <div class="row-space">&nbsp;</div>
 
-                </span>
+        
+         
+          
+            
+          
+
+        
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12" href="https://arxiv.org/pdf/1805.11074"
+                    target="_blank" rel="noopener noreferrer">
+                    <a href="https://arxiv.org/pdf/1805.11074" target="_blank" rel="noopener noreferrer">
+                        <img class="project__image img-responsive" src="portfolio/rcpo.png" alt="Reward Constrained Policy Optimization">
+                    </a>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <span class="project__title">
+                        <a href="https://arxiv.org/pdf/1805.11074" target="_blank" rel="noopener noreferrer">Reward Constrained Policy Optimization</a>
+                    </span>
+                    
+                        </br>
+                        <span class="project__authors">
+                            Chen Tessler, Daniel J. Mankowitz and Shie Mannor
+                        </span>
+                    
+                    </br>
+                    <span class="project__summary">
+                        <b>Published: </b>ICLR 2019
+                    </span>
+                    <span class="project__subtitle-small">
+                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                        Learning to satisfy constraints by converting the constraint into a discounted return
+                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                    </span>
+                    <span class="project__summary">
+                        <p>Learning a policy which adheres to behavioral constraints is an important task. Our algorithm, RCPO, enables the satisfaction of not only discounted constraints but also average and probabilistic, in an efficient manner.</p>
+
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="row-space">&nbsp;</div>
+            <div class="row-space">&nbsp;</div>
 
-    
-     
-  </div>
+        
+         
+          
+            
+          
+
+        
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12" href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950"
+                    target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950" target="_blank" rel="noopener noreferrer">
+                        <img class="project__image img-responsive" src="portfolio/hdrln.png" alt="A Deep Hierarchical Approach to Lifelong Learning in Minecraft">
+                    </a>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <span class="project__title">
+                        <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14630/13950" target="_blank" rel="noopener noreferrer">A Deep Hierarchical Approach to Lifelong Learning in Minecraft</a>
+                    </span>
+                    
+                        </br>
+                        <span class="project__authors">
+                            Chen Tessler*, Shahar Givony*, Tom Zahavy*, Daniel J. Mankowitz* and Shie`Mannor
+                        </span>
+                    
+                    </br>
+                    <span class="project__summary">
+                        <b>Published: </b>AAAI 2017
+                    </span>
+                    <span class="project__subtitle-small">
+                        <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                        Combining skills with deep RL enables solving complex high dimensional tasks
+                        <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                    </span>
+                    <span class="project__summary">
+                        <p>We propose a lifelong learning system that has the ability to reuse and transfer knowledge from one task to another while efficiently retaining the previously learned knowledge-base. Knowledge is transferred by learning reusable skills to solve tasks in Minecraft, a popular video game which is an unsolved and high-dimensional lifelong learning problem.</p>
+
+                    </span>
+                </div>
+            </div>
+            <div class="row-space">&nbsp;</div>
+
+        
+         
+      </div>
+    </section>
   
 
 
