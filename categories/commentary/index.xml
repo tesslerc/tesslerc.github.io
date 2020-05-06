@@ -6,7 +6,7 @@
     <description>Recent content in Commentary on Chen Tessler</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tesslerc.github.io/categories/commentary/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Deep Reinforcement Learning Works - Now What?</title>
       <link>https://tesslerc.github.io/posts/drl_works_now_what/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tesslerc.github.io/posts/drl_works_now_what/</guid>
       <description>It&amp;rsquo;s safe to assume that deep reinforcement learning does indeed work. This is backed by recent trends which have achieved tremendous feats. An important question is — now what? In this post I question certain trends in deep RL research and propose some insights and solutions.</description>
