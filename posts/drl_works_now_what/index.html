@@ -270,7 +270,7 @@
 <p>We observe two regions, which are algorithm and domain-dependent. The first is the well-known region of $\gamma &lt; 0.99$, here, the effective planning horizon $T_{eff} = 1 / (1 - \gamma)$ is too low. As the agent is effectively planning for a short horizon it is incapable of properly solving the task. On the other hand, the more interesting region is at $\gamma &gt; 0.99$. When the discount factor is too large, the algorithm suffers from instability, resulting in suboptimal performance.</p>
 <p>Hence, as our goal is to maximize the performance in the MDP, the hyperparameters for each domain are simply another set of parameters for the RL algorithm to optimize,  either manually or automatically [9].</p>
 <hr>
-<h2 id="algorithms-are-too-complex">Algorithms are Too Complex</h2>
+<h2 id="algorithm-novelty-vs-performance">Algorithm Novelty vs Performance</h2>
 <p>We as a community seem to admire either (1) SOTA performance or (2) complex algorithmic novelty. While these may be easier to evaluate as a reviewer, these do not necessarily drive the field forward. Often, the simpler method will not only have higher chances of community adoption, but also work better [1].</p>
 <p>For instance, recent work has shown that, when performing robotic control from pixels, simple augmentation techniques combined with a simple policy learning algorithm outperform very complex previous algorithmic methods [37, 38].</p>
 <p>This leads to a question as to what is the additional benefit of these complex methods? Does the algorithmic novelty truly result in a superior method, or does it impose some implicit bias/regularization on the learning process which in turn led to improved performance?</p>
