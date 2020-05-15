@@ -212,7 +212,8 @@
   
   
   <div class="post">
-    <p>Two years ago, Alex Irpan wrote a post about why <a href="https://www.alexirpan.com/2018/02/14/rl-hard.html">&ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;</a>. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]. Moreover, we are now capable of training robust agents [27, 28] which can generalize to new and previously unseen domains!</p>
+    <p><code>Edit 1: Added references to Neural Episodic Control + small section in the conclusions.</code></p>
+<p>Two years ago, Alex Irpan wrote a post about why <a href="https://www.alexirpan.com/2018/02/14/rl-hard.html">&ldquo;Deep Reinforcement Learning Doesn&rsquo;t Work Yet&rdquo;</a>. Since then, we have made huge algorithmic advances, tackling most of the problems raised by Alex. We have methods that are sample efficient [1, 21] and can learn in an off-policy batch setting [22, 23]. When lacking a reward function, we now have methods that can learn from preferences [24, 25] and even methods that are better fit to escape bad local extrema, when the return is non-convex [14, 26]. Moreover, we are now capable of training robust agents [27, 28] which can generalize to new and previously unseen domains!</p>
 <p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/QyJGXc9WeNo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -291,6 +292,7 @@
 <p>While I tried to highlight some issues I have encountered, and fallen for myself during my research; the state of DRL isn&rsquo;t as bad as it used to be. We can proudly say that <strong>Deep RL does work</strong>, and there are many exciting lines of work that knowingly or not tackle the problems I have highlighted here.</p>
 <p>An under-rated method is Evolution Strategies [2]. Also commonly referred to as random search, ES is capable of optimizing the real objective. By changing the policy, evaluating it on the total reward, and updating the weights based on the performance improvement, this scheme directly optimizes the policy with respect to the total reward.</p>
 <p>Reward-Conditioned Policies [5] and Upside Down RL [3,4] convert the reinforcement learning problem into that of supervised learning. While many questions remain open (good for us! we can publish!), this line of work seems promising and may continue to surprise in the future, as supervised learning is a well-explored learning paradigm with many properties that RL can benefit from.</p>
+<p>Finally, a line of work which I find super intriguing and hasn&rsquo;t received enough attention is Neural Episodic Control [39]. Here, the authors provide a differentiable method for discretising the MDP. Their method provides both sample efficiency (due to the exact updates of the Q values) and reduces the need for certain hyper-parameters (reward clipping, discount factors, etc&hellip;).</p>
 <p>It&rsquo;s important to reflect back on what we have done, and what we can do better in the future. The fact that Deep RL does work enables us to take this step back and drive the field to new heights 💪.</p>
 <p><strong>Comment below!</strong></p>
 <hr>
@@ -332,7 +334,8 @@
 [35] Berner, Christopher, et al. &ldquo;Dota 2 with Large Scale Deep Reinforcement Learning.&rdquo; arXiv preprint arXiv:1912.06680 (2019).<br>
 [36] Zintgraf, Luisa, et al. &ldquo;VariBAD: A Very Good Method for Bayes-Adaptive Deep RL via Meta-Learning.&rdquo; International Conference on Learning Representations. 2019.<br>
 [37] Laskin, Lee, et al. &ldquo;Reinforcement Learning with Augmented Data.&rdquo; arXiv preprint arXiv:2004.14990 (2020).<br>
-[38] Kostrikov, Yarats and Fergus. &ldquo;Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels.&rdquo; arXiv preprint arXiv:2004.13649 (2020).</p>
+[38] Kostrikov, Yarats and Fergus. &ldquo;Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels.&rdquo; arXiv preprint arXiv:2004.13649 (2020).<br>
+[39] Pritzel, Alexander, et al. &ldquo;Neural episodic control.&rdquo; Proceedings of the 34th International Conference on Machine Learning-Volume 70. JMLR. org, 2017.</p>
 
   </div>
   
