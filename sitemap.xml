@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://tesslerc.github.io/categories/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+    <loc>https://tesslerc.github.io/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tesslerc.github.io/</loc>
+    <loc>https://tesslerc.github.io/portfolio/coirl/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tesslerc.github.io/portfolio/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tesslerc.github.io/categories/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -45,16 +55,6 @@
   <url>
     <loc>https://tesslerc.github.io/portfolio/reward_tweaking/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tesslerc.github.io/portfolio/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tesslerc.github.io/portfolio/coirl/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
